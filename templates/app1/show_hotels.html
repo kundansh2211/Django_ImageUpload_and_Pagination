@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Display Hotels</title>
+    <style>
+         .msg {
+      background-color: #f0f0f0;
+      padding: 20px;
+      top: 0;
+      display: flex;
+      width: 100%;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+    </style>
+</head>
+<body>
+<div class="msg">
+{% if messages %}
+    {% for message in messages %}
+    <h1 style="color:#3258a8">{{ message }}</h1>
+    {% endfor %}
+{% endif %}
+</div>
+
+
+{% for hotel in hotels %}
+    <h2>{{ hotel.id }}</h2>
+    <h2>{{ hotel.name }}</h2>
+    <h3>{{ hotel.city }}</h3>
+    <img src="{{ hotel.image.url }}" height="250px" width="300px"><hr>
+{% endfor %}
+
+
+</body>
+</html>
